@@ -1,0 +1,85 @@
+#Undirected graph: relationships are 2-way. used to model social or computer networks.
+
+
+#directed graph: relationships are 1 way. used to model airplane flights or bus routes.
+
+
+
+#Adjacency List: List of neighbors stored in each vertex
+
+
+#Adjacency Matrix: Matrix of neighbours stored centrally in Graph object
+
+
+
+#Adjacency List
+#Pro: faster and uses less space for Sparde graphs
+#Con: Slower for Dense graphs
+
+
+#Adjacency Matrix
+#Pro: Faster for Dense graphs
+#Pro: Simpler for Weighted edges
+#Con: uses more space
+
+
+
+#Vertex Class
+
+
+class Vertex:
+    def __init__(self,n):
+        self.name = n
+        self.neighbors = set()
+
+    def add_neighbor(self, v):
+        self.neighbors.add(v)
+
+
+#Graph Class
+
+class Graph:
+    vertices = {}
+
+    def add_vertex(self, vertex):
+        if isinstance(vertex, Vertex) and vertex.name not in self.vertices:
+            self.vertices[vertex.name] = vertex
+            return True
+        else:
+            return False 
+
+
+    def add_edge(self, u, v):
+        if u in self.vertices and v in self.vertices:
+            self.vertices[u].add_neighbor(v)
+            self.vertices[v].add_neighbor(u)
+            return True
+        else:
+            return False
+
+
+    def print_graph(self):
+        for key in sorted(list(self.vertices.keys())):
+            print(key, sorted(list(self.vertices[key].neighbors)))
+
+
+
+
+
+g = Graph()
+a = Vertex('A')
+g.add_vertex(a)
+g.add_vertex(Vertex('B'))
+for i in range(ord('A'), ord('K')):
+    g.add_vertex(Vertex(chr(i)))
+
+
+edges = ['AB', 'AE', 'BF', 'CG', 'DE', 'DH', 'EH', 'FG', 'FI', 'FJ', 'GJ', ]
+for edge in edges:
+    g.add_edge(edge[0], edge[1])
+
+
+g.print_graph()
+
+
+
