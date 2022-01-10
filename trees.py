@@ -47,3 +47,38 @@
 
 #two children
 #find the next higher node
+
+
+#Get_size
+
+#returns number of nodes. Works recursively
+
+
+#size = 1
+# + size(left subtree)
+
+
+
+
+
+#Preorder Traversal
+
+#Visit root before visiting the root's subtrees. 
+
+
+#Inorder Traversal
+
+#visit root between visiting the root's subtrees
+
+#Gives values in sorted order.
+
+
+
+#Advantages of Binary Search Tree
+
+#Becuase of recursion, easy to implement
+#Speed
+
+#Insert, Delete, Find in O(h) = O(logn)
+
+
