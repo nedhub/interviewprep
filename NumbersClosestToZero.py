@@ -28,10 +28,10 @@ def minAbsSumPair(arr,arr_size):
 
 
 
-    arr = [1,60,-10,70,-80,85]
+arr = [1,60,-10,70,-80,85]
 
 
-    minAbsSumPair(arr, 6);
+minAbsSumPair(arr, 6);
 
 
 
